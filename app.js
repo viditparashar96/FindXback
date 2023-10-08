@@ -13,7 +13,7 @@ const corsOptions = {
     origin: 'https://find-x-frontend.vercel.app',
     credentials: true,
   };
-  
+//   http://localhost:5173
 app.use(logger('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
