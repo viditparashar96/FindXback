@@ -10,10 +10,10 @@ const fileUpload=require("express-fileupload")
 const port=process.env.PORT || 8080
 dbconnect()
 
-const corsOptions = {
-    origin: 'https://find-x-frontend.vercel.app',
-    credentials: true,
-  };
+// const corsOptions = {
+//     origin: 'https://find-x-frontend.vercel.app',
+//     credentials: true,
+//   };
 app.use(logger('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -22,7 +22,7 @@ app.use(fileUpload())
 // session and cookie
 const session =require('express-session')
 const cookieParser=require('cookie-parser')
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.use(session({
     resave:true,
