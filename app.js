@@ -11,7 +11,7 @@ const port=process.env.PORT || 8080
 dbconnect()
 
 const corsOptions = {
-    origin: 'https://find-x-frontend.vercel.app',
+    origin: 'http://find-x-frontend.vercel.app',
     credentials: true,
   };
 app.use(logger('tiny'))
