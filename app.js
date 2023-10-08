@@ -7,6 +7,7 @@ const { generatedErrors } = require("./middleware/errors")
 const {dbconnect}=require('./config/database')
 const cors=require("cors")
 const fileUpload=require("express-fileupload")
+const port=process.env.PORT || 8080
 dbconnect()
 
 const corsOptions = {
@@ -55,4 +56,4 @@ app.use(generatedErrors)
 
 
 
-app.listen(process.env.PORT,console.log(`server running on port ${process.env.PORT}`))
+app.listen(port,console.log(`server running on port ${port}`))
