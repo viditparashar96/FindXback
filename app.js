@@ -10,9 +10,10 @@ const fileUpload=require("express-fileupload")
 dbconnect()
 
 const corsOptions = {
-    origin: 'https://find-x-frontend.vercel.app/',
+    origin: 'https://find-x-frontend.vercel.app',
     credentials: true,
   };
+  
 app.use(logger('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
