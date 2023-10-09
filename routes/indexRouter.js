@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const {studentsignup,studentsignin,studentavatar,studentupdate,studentsignout,studentsendmail,currentUser,studentforgetlink,studentresetpassword, studentdeleteaccount, applyinternship, applyjob, getallinternship, getalljobs, getinternshipbyid, getinternshipbyprofile, getinternshipbylocation, getjobbyid, getjobbyprofile, getjobbylocation, getallapplications}=require("../controllers/indexController")
+const {studentsignup,studentsignin,studentavatar,studentupdate,studentsignout,studentsendmail,currentUser,studentforgetlink,studentresetpassword, studentdeleteaccount, applyinternship, applyjob, getallinternship, getalljobs, getinternshipbyid, getinternshipbyprofile, getinternshipbylocation, getjobbyid, getjobbyprofile, getjobbylocation, getallapplications, getlatestinternship}=require("../controllers/indexController")
 const { isAuthenticated } = require('../middleware/auth')
 
 // Dummy Auth route=>
@@ -123,6 +123,10 @@ router.get("/student/jobs/search/bylocation",getjobbylocation)
 // GET /student/allApplications
 router.get("/student/allapplications",isAuthenticated,getallapplications)
 
+
+// GET/ All latest Internship  uploaded in website
+
+router.get("/student/latestinternship",getlatestinternship)
 
 
 
