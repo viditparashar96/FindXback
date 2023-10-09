@@ -11,7 +11,7 @@ dbconnect()
 
 const corsOptions = {
     origin: 'https://find-x-frontend.vercel.app',
-    credentials: true,
+    credentials: true,  
   };
 //   http://localhost:5173
 app.use(logger('tiny'))
