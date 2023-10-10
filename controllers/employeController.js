@@ -43,10 +43,15 @@ exports.employesignin=catchAsyncErrors(async(req,res,next)=>{
 
 exports.employesignout=catchAsyncErrors(async(req,res,next)=>{
 
-    res.clearCookie("token")
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: true, // Set to true if your application is served over HTTPS
+        sameSite: "none" // Adjust the sameSite attribute as needed
+    });
+
     res.json({
-        msg:"successfully signout"
-    })
+        msg: "Successfully signed out"
+    });
     
 })
 
