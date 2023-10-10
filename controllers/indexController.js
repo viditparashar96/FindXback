@@ -33,14 +33,18 @@ exports.studentsignin=catchAsyncErrors(async(req,res,next)=>{
 
 
 
-exports.studentsignout=catchAsyncErrors(async(req,res,next)=>{
+exports.studentsignout = (req, res) => {
+    // Clear the "token" cookie by setting its expiration to a past date
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: true, // Set to true if your application is served over HTTPS
+        sameSite: "none" // Adjust the sameSite attribute as needed
+    });
 
-    res.clearCookie("token")
     res.json({
-        msg:"successfully signout"
-    })
-    
-})
+        msg: "Successfully signed out"
+    });
+};
 
 exports.studentsendmail=catchAsyncErrors(async(req,res,next)=>{
     console.log(req.body.email)
