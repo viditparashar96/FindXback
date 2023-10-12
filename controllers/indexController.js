@@ -411,3 +411,19 @@ exports.getlatestinternship=catchAsyncErrors(async(req,res,next)=>{
         internship
     })
 })
+
+
+
+// Latest Jobs  upload feed in homepage==>
+
+exports.getlatestjob=catchAsyncErrors(async(req,res,next)=>{
+    console.log(req.query)
+    const job= await Job.find().sort({createdAt:-1}).limit(8).populate("createdBy")
+    
+ 
+    
+    res.status(202).json({
+        msg:" latest Jobs  found",
+        job
+    })
+})
